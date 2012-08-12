@@ -16,7 +16,9 @@
 	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
 	<link rel="stylesheet" href="extensions/status/deck.status.css">
 	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
-	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
 
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
 	<link rel="stylesheet" href="themes/style/swiss.css">
@@ -26,6 +28,19 @@
 	
 	<!-- Required Modernizr file -->
 	<script src="modernizr.custom.js"></script>
+  <style>
+  table#fitnesse
+  {
+    border: 1px solid black;
+  }
+
+  table#fitnesse td
+  {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+  }
+  </style>
 </head>
 <body class="deck-container">
 
@@ -36,7 +51,7 @@
 </section>
 
 <section class="slide">
-<h2>Eric and Eric</h2>
+<h2>The Erics</h2>
 <h3>8th Light Software Craftsmen</h3>
 <table width="100%">
   <tr>
@@ -72,27 +87,188 @@
 
 <section class="slide">
 <h2>...Hard</h2>
+<h3>UIKit was not built with testing in mind</h3>
+<h3>Tools were poor</h3>
+<h4>XCode</h4>
+<h4>Simulator is slow</h4>
+<h3>There's no assert_pretty</h3>
+</section>
+
+<section class="slide">
+<h2>Let's make it</h2>
+<h1 style="color: #5AAA5A;font-size: 2em;">Easy!</h1>
+</section>
+
+<section class="slide">
+<h2>Tools</h2>
+<img alt="Sonic Screwdriver" src="images/Sonic_Screwdriver.jpeg" />
+</section>
+
+<section class="slide">
+<h2>Acceptance Testing</h2>
+<img alt="slim" src="images/history_of_slim.png" />
+</section>
+
+<section class="slide">
+<h2>Acceptance Testing: Architecture</h2>
+<img alt="slim" src="images/architecture" />
+</section>
+
+<section class="slide">
+<h2>Acceptance Testing</h2>
+<table id="fitnesse">
+  <tbody>
+    <tr>
+      <td style="text-algin: left;
+        " colspan="4">GuessChecker</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>guess</td>
+      <td>number correct?</td>
+      <td>number in wrong spot?</td>
+    </tr>
+    <tr>
+      <td>1234</td>
+      <td>1234</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1111</td>
+      <td>2222</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1122</td>
+      <td>1212</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1122</td>
+      <td>1111</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4545</td>
+      <td>1111</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1234</td>
+      <td>2341</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>3752</td>
+      <td>3152</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1112</td>
+      <td>1144</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1122</td>
+      <td>2211</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>1123</td>
+      <td>3311</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section class="slide">
+<h2>Fixtures</h2>
+<h3>This is the part you write with the customer</h3>
+</section>
+
+<section class="slide">
+<h2>Acceptance Testing</h2>
+<img src="urface.jpg" alt="The Picture of the Architecture" />
+</section>
+
+<section class="slide">
 </section>
 
 
 <section class="slide">
+<h2></h2>
+</section>
+
+<section class="slide">
+<h2>Decision Table</h2>
+</section>
+
+<section class="slide">
+<h2>Script Table</h2>
+</section>
+
+<section class="slide">
+<h1>Running The Tests</h1>
+<h2>Demo</h2>
+</section>
+
+<section class="slide">
+<h1>SpecKit</h1>
+</section>
+
+<section class="slide">
+<h2>Concepts</h2>
+<h3>Context</h3>
+<h3>Describe</h3>
+<h3>It</h3>
+<h3>ExpectObj</h3>
+</section>
+
+<section class="slide">
+<h1>Running Tests</h1>
+</section>
+
+
+<section class="slide">
+<h2>A Testing Pyramid</h2>
+<h3>IT</h3>
+<h3>AT</h3>
+<h3>UT</h3>
+</section>
+
+<section class="slide">
+<h2>Acceptance Testing</h2>
+<h3>What makes a good acceptance test?</h3>
+</section>
+
+<section class="slide">
+<h1>Begin Exercise</h1>
+</section>
+
+<section class="slide">
+<h2>Making The App the Star</h2>
+</section>
+
+<section class="slide">
+<h2>Depend on interfaces/protocols</h2>
+<h2>Ur Face</h2>
 <h1>Writing Tests on iOS</h1>
 <h2>The Star of your App</h2>
 <h2>App Design</h2>
 <h2>Effective Faking</h2>
 <h2>Test Smells</h2>
 <h2>Heavy Lifting - Tips and Tricks</h2>
-</section>
-
-<section class="slide">
-<h2>Testing Pyramid</h2>
-</section>
-<section class="slide">
-  <h1>OCSlim</h1>
-</section>
-
-<section class="slide">
-  <h1>SpecKit</h1>
 </section>
 
 <section class="slide">
@@ -139,6 +315,14 @@
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="extensions/codemirror/mode/xml/xml.js"></script>
+<script src="extensions/codemirror/mode/css/css.js"></script>
+<script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<!-- Plugin code -->
+<script src="extensions/codemirror/deck.codemirror.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>

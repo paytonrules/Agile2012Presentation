@@ -1,0 +1,31 @@
+- Slide 1
+  - Agile iOS - what is this workshop about?  What will we do?  What does it mean to be "Agile"
+
+- Slide 2
+  - Eric && Eric.  Who are we?  What is 8th Light?
+
+- Slide 3
+  - Survey, who has done TDD on iOS, who has given up.
+
+- Slide 4 & 5
+  - Why is iOS testing so hard?
+  - Why do you think it's hard?
+
+- Slide 6, 7
+  - Let's make easy
+  - Starting with tools for Acceptance Testing and Unit Testing
+
+[ Transition to Mr. Meyer }
+
+- Slide 8
+  - We'll be using an AT framework called OCSlim or just Slim.  
+  - History
+  - Why write this kind of test?  What is the benefit?
+
+- Slide 9
+  - What does it look like
+  - Example of a test
+  - What does this test mean?
+  - You do this part with the cumstomer
+ 
+- k
