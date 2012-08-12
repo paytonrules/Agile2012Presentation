@@ -40,6 +40,28 @@
     padding: 4px;
     text-align: center;
   }
+  table#fitnesse2
+  {
+    border: 1px solid black;
+  }
+
+  table#fitnesse2 td
+  {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+  }
+  table#fitnesse3
+  {
+    border: 1px solid black;
+  }
+
+  table#fitnesse3 td
+  {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+  }
   </style>
 </head>
 <body class="deck-container">
@@ -110,8 +132,8 @@
 </section>
 
 <section class="slide">
-<h2>Acceptance Testing: Architecture</h2>
-<img alt="slim" src="images/architecture" />
+<h2>Architecture</h2>
+<img alt="slim" src="images/slim_architecture.png" />
 </section>
 
 <section class="slide">
@@ -193,29 +215,74 @@
 </section>
 
 <section class="slide">
-<h2>Fixtures</h2>
-<h3>This is the part you write with the customer</h3>
-</section>
+<h2>Fixture</h2>
+<textarea class="code" mode="clike">
+@implementation GuessChecker
 
-<section class="slide">
-<h2>Acceptance Testing</h2>
-<img src="urface.jpg" alt="The Picture of the Architecture" />
-</section>
+@synthesize code, guess;
 
-<section class="slide">
-</section>
+-(int) numberCorrect {
+    return [[MMGuessResult numberCorrectForCode: [self.code $chars]
+                                       andGuess: [self.guess $chars]]
+             intValue];
+}
 
+-(int) numberInWrongSpot {
+    return [[MMGuessResult numberInWrongSpotForCode: [self.code $chars]
+                                           andGuess: [self.guess $chars]]
+             intValue]; }
 
-<section class="slide">
-<h2></h2>
+@end
+</textarea>
 </section>
 
 <section class="slide">
 <h2>Decision Table</h2>
+<table id="fitnesse2">
+  <tbody>
+    <tr>
+      <td style="text-algin: left;
+        " colspan="4">GuessChecker</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>guess</td>
+      <td>number correct?</td>
+      <td>number in wrong spot?</td>
+    </tr>
+    <tr>
+      <td>1234</td>
+      <td>1234</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
 </section>
 
 <section class="slide">
 <h2>Script Table</h2>
+<table id="fitnesse3">
+  <tbody>
+    <tr>
+      <td>script</td>
+      <td colspan="2">GameRunner</td>
+    </tr>
+    <tr>
+      <td>start new game with code</td>
+      <td colspan="2">1234</td>
+    </tr>
+    <tr>
+      <td>check secret code</td>
+      <td colspan="2">1234</td>
+    </tr>
+    <tr>
+      <td>check</td>
+      <td>remaining guesses</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
 </section>
 
 <section class="slide">
@@ -228,17 +295,43 @@
 </section>
 
 <section class="slide">
-<h2>Concepts</h2>
-<h3>Context</h3>
-<h3>Describe</h3>
-<h3>It</h3>
-<h3>ExpectObj</h3>
+<h2>Context/Describe</h2>
+<textarea style="width: 100%" mode="clike" width="100%">
+SpecKitContext(MMGameImplementationSpec) {
+  __block MMGameImplementation* game;
+
+  Describe(@"gameWithCode", ^{
+</textarea>
 </section>
 
 <section class="slide">
-<h1>Running Tests</h1>
+<h2>It</h2>
+<textarea style="width: 100%" mode="clike">
+It(@"is not over", ^{
+  [ExpectBool([game isOver]) toBeFalse];
+});
+</textarea>
 </section>
 
+<section class="slide">
+<h2>Expect</h2>
+<textarea style="width: 100%" mode="clike">
+[ExpectObj([game.secretCode $join]) toBeEqualTo: @"1234"];
+
+[ExpectBool([game isOver]) toBeFalse];
+
+[ExpectInt([game.numberOfRemainingGuesses intValue]) toBe: 20];
+</textarea>
+</section>
+
+<section class="slide">
+<h1>Running</h1> 
+</section>
+
+<section class="slide">
+<h2>Let it Begin</h2>
+<p>Exercise:  Finish the app!</p>
+</section>
 
 <section class="slide">
 <h2>A Testing Pyramid</h2>
@@ -286,7 +379,6 @@
 <!-- deck.status snippet -->
 <p class="deck-status">
 	<span class="deck-status-current"></span>
-	/
 	<span class="deck-status-total"></span>
 </p>
 
@@ -315,14 +407,15 @@
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
-<script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+<script src="extensions/codemirror/codemirror.js"></script>
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+<script src="extensions/codemirror/mode/clike/clike.js"></script>
 <!-- html mode (note html mode requires xml, css and javascript) -->
 <script src="extensions/codemirror/mode/xml/xml.js"></script>
 <script src="extensions/codemirror/mode/css/css.js"></script>
 <script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
 <!-- Plugin code -->
-<script src="extensions/codemirror/deck.codemirror.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>

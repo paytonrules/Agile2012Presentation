@@ -23,9 +23,41 @@
   - Why write this kind of test?  What is the benefit?
 
 - Slide 9
-  - What does it look like
+  - Architecture
+
+- Slide 10
+  - What does a test look like
   - Example of a test
   - What does this test mean?
   - You do this part with the cumstomer
+  - Tests are HTML tables - but you write them in wikitext
  
-- k
+- Slide 11
+  - Fixture Code Example
+
+- Slide 12
+  - A "zoomed in" version of the Decision Table
+
+- Slide 13
+  - A beginning of a Script Table
+
+- Slide 14
+  - Runing the tests (show fitnesse)
+
+- Slide 15
+  - SpecKit - the Sequel to OCDSpec
+
+- Slide 16
+  - Context/Describe
+
+- Slide 17
+  - It
+
+- Slide 18
+  - Expect(Int/Obj/Bool)
+
+ - Slide 19
+  - Running Tests (demo
+ 
+- Slide 20
+  - Exercise
