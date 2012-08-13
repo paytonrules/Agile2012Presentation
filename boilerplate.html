@@ -315,7 +315,7 @@ It(@"is not over", ^{
 
 <section class="slide">
 <h2>Expect</h2>
-<textarea style="width: 100%" mode="clike">
+<textarea style="width: 100%; height: 200px" mode="clike">
 [ExpectObj([game.secretCode $join]) toBeEqualTo: @"1234"];
 
 [ExpectBool([game isOver]) toBeFalse];
@@ -330,14 +330,112 @@ It(@"is not over", ^{
 
 <section class="slide">
 <h2>Let it Begin</h2>
-<p>Exercise:  Finish the app!</p>
+<h1>Mastermind</h1>
+</section>
+
+<section class="slide">
+<h1>Effective TDD</h1>
+</section>
+
+<section class="slide">
+<img alt="wedged" src="images/wedged.jpg" />
+</section>
+
+<section class="slide">
+<img alt="flow" src="images/flow.jpg" />
+</section>
+
+<section class="slide">
+<h2>What the hell do I mean?</h2>
+<textarea style="width: 100%; height: 500px" mode="clike">
+  - (IBAction)sendCustomXXXXXX:(id)sender
+  {
+    [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierXXXXX];
+
+    ￼ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+     ACAccountType *accountType =
+       [accountStore requestAccessToAccountsWithType:accountType
+                    withCompletionHandler:^(BOOL granted, NSError *error) {
+          if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+            if ([accountsArray count] > 0) {
+              ACAccount *account = [accountsArray objectAtIndex:0];
+  </textarea>
+</section>
+
+<section class="slide">
+<h2>How bout this?</h2>
+<textarea style="width: 100%; height: 100px;" mode="clike">
+￼- (IBAction)sendCustomTweet:(id)sender {
+  [_twitterUser sendTweet:tweetBox.text]; 
+}
+</textarea>
+</section>
+
+<section class="slide">
+<h2>The Test</h2>
+<textarea style="width: 100%; height: 420px;" mode="clike">
+it(@"updates the tweets after sending", ^{
+  TwitterController *cont = [[TwitterController alloc] init]; 
+  cont.tweetBox = [[UITextBox alloc] init];
+  
+  FakeTwitterUser *user = [[FakeTwitterUser alloc] init]; 
+  cont.twitterUser = user;
+
+  cont.tweetBox.text = @"Tweet";
+  
+  [cont sendCustomTweet];
+  
+  [expect(user.tweetText) toBeEqualTo:@"Tweet"]; 
+}),
+</textarea>
+</section>
+
+<section class="slide">
+<h2>The Star!</h2>
+<img alt="thestar" src="images/your_app_is_the_star.jpg" />
+</section>
+
+<section class="slide">
+<h2>Effective Fakes</h2>
+<img alt="fake" src="images/effective_fakes.jpg" />
+</section>
+
+<section class="slide">
+<h2>Guidelines</h2>
+<h3>Mock Protocols, not Concretes</h3>
+<h3>Mock tiny interfaces</h3>
+<h3>Interface segregation principle</h3>
+</section>
+
+<section class="slide">
+<h2>Isolate From Third Parties</h2>
+<img alt="wrapping" src="images/wrapping_third_party.jpg" />
+</section>
+
+<section class="slide">
+<h2>Don'ts</h2>
+<h3>Don’t Copy/Paste straight from docs</h3>
+<h3>Don’t tie your architecture to UIKit</h3>
+<h3>Don’t mix concerns</h3>
+<h3>Don’t mock what you don’t own</h3>
+</section>
+
+<section class="slide">
+<h2>Dos</h2>
+<h3>Isolate UIKit/Cocoa</h3>
+<h3>Do make your tests fast</h3>
+<h3>Do learn the runtime</h3>
+<h3>Do keep unit testing</h3>
 </section>
 
 <section class="slide">
 <h2>A Testing Pyramid</h2>
-<h3>IT</h3>
-<h3>AT</h3>
-<h3>UT</h3>
+<div style="width: 100%">
+<p style="text-align:center; font-size: .7em;">Integration</p>
+<p style="text-align:center; font-size: 1.7em;">Acceptance</p>
+<p style="text-align:center; font-size: 6em;">Unit</p>
+</div>
 </section>
 
 <section class="slide">
@@ -346,26 +444,15 @@ It(@"is not over", ^{
 </section>
 
 <section class="slide">
-<h1>Begin Exercise</h1>
+<h2>Developer Happiness</h2>
+<img src="images/batman_and_unicorn.jpg" alt="batman" />
 </section>
 
 <section class="slide">
-<h2>Making The App the Star</h2>
-</section>
-
-<section class="slide">
-<h2>Depend on interfaces/protocols</h2>
-<h2>Ur Face</h2>
-<h1>Writing Tests on iOS</h1>
-<h2>The Star of your App</h2>
-<h2>App Design</h2>
-<h2>Effective Faking</h2>
-<h2>Test Smells</h2>
-<h2>Heavy Lifting - Tips and Tricks</h2>
-</section>
-
-<section class="slide">
-  <h1>Getting Started</h1>
+<h2>We are the Erics</h2>
+<h3>8th Light (8thlight.com)</h3>
+<h3>@paytonrules and @emeyer8thlight</h3>
+<h3>Thanks</h3>
 </section>
 
 <!-- End slides. -->

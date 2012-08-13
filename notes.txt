@@ -61,3 +61,59 @@
  
 - Slide 20
   - Exercise
+
+*** iKickAss ****
+
+- Slide 21
+  - Effective TDD
+
+- Slide 22
+  - TDD jammed in, and forced, and a little frustrating.
+  - The almost too typical TDD Process where you write a large test to try and kind of get something, anything done, or you spend huge amounts of time debugging and fiddling until you see what you want.  There's test there, and it kinda works, but like it's not all you hoped for.  
+
+- Slide 23
+  - We're looking for a relaxed flow.  When you see somebody perform a kata it's extremely calm, and never feels forced, but looks a little phony.  Every time we're wedging things in we need to work towards flowing gracefully in our coding.  Refactor from jammed in, to relaxed.
+
+- Slide 24
+ - Bad example code from Apple's website
+- Note how the mixing of concerns
+
+- Slide 25
+  - My code
+
+- Slide 26
+  - My test - it looks like my test
+
+- Slide 27
+  - Keep your app as the star of your app.  We spend a lot of time figuring out how to do various iOSy things, be it navigation controllers, table views, or GeoLocation.  But we typically figure that out once, and it's not usually the heart of our application.  Keep things in the domain language of your app, the rest should follow.
+
+  - A moat between you and UIKit
+
+- Slide 28
+  - Effective Fakes/Mocks/Test Doubles
+  - You will need fakes in your app.  Use them effectively.
+
+- Slide 29
+  - Guidelines.  Tiny, ISP, remember the client owns the interface, the concrete class doesn't. Finally there is no assert pretty.
+
+- Slide 30
+  - Isolate yourself from third party tools, and this most definitely includes UIKit.
+
+- Slide 31
+  Don'ts
+
+- Slide 32
+  Dos
+
+- Slide 33
+  Testing Pyramid
+
+- Slide 34
+  What makes a good acceptance test?
+  - Clear, reliable, and it doesn't hit the UI unless it absolutely has tA
+
+- Slide 35
+  This is all about developer happiness
+
+- Slide 36
+  Thanks! 
